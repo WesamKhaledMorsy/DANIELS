@@ -1,0 +1,862 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+:root{
+    --font-family-headers:Montserrat, sans-serif;
+    --font-family-paragraph:Poppins , sans-serif;
+
+    --main-color:#1C1C1C;
+    --main-color-paragraph:#748182;
+    --main-color-header:#343434;
+    --main-color-white:#fff;
+    --navbar-color-active:#111;
+
+    --background-color-muted:#F7F7F7;
+
+    --background-color-while-hovering:#FEFEFE;
+
+    --color-coursel:#869791;
+    --team-section-content-background:#5B5B5B;
+}
+ul li{
+    list-style: none;
+}
+.w10{
+    width: 10%;
+}
+/****** Start Header**********/
+/****** Start NavBar ******/
+nav{
+    -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+nav .container .navbar-brand{
+    font-family: var(--font-family-headers);
+    font-weight: 800;
+    font-size: 18px;
+}
+.navbar-nav .nav-item a{
+    color: var(--main-color-header);
+    font-family: var(--font-family-paragraph);
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 14px;
+}
+.navbar-nav .nav-item {
+    margin-inline: 0.8rem;
+}
+.navbar-nav > li .active{
+    color: var(--navbar-color-active) !important;
+    /* border-bottom:2px solid var(--navbar-color-active); */
+}
+.navbar-nav > li.nav-item a.nav-link{
+    position: relative;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+a.nav-link::after{
+    content: '';
+    height: 2px;
+    background-color: #111;
+    position: absolute;
+    bottom: 10%;
+    left:0%;
+    width: 0%;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+a.nav-link.active::after{
+    content: '';
+    height: 2px;
+    -webkit-transform-origin: left ;
+        -ms-transform-origin: left ;
+            transform-origin: left ;
+    background-color: #111;
+    position: absolute;
+    bottom: 10%;
+    left:0%;
+    -webkit-animation: underline;
+            animation: underline;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-direction: initial;
+            animation-direction: initial;
+    width: 100%;
+}
+@-webkit-keyframes underline{
+from{
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+}
+to{
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+}
+}
+@keyframes underline{
+from{
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+}
+to{
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+}
+}
+.navbar-toggler ,.navbar-toggler.collapsed{
+    border: none;
+}
+@media screen and (max-width:768px) {
+    .navbar-header{
+        border-bottom: 2px solid var(--main-color-header);
+    }
+    .navbar-nav .nav-item{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+}
+@media screen and (min-width:768px)  and (max-width:991px) {
+    .navbar-nav .nav-item{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+}
+/****** End NavBar ******/
+/******* Start Header Over lay ***********/
+
+Header{
+background: url(/image/bg.jpg);
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+Header .over-lay {
+    background-color: rgba(0, 0, 0, 0.6 );
+}
+.over-lay .header-h1{
+font-size: 50px;
+font-family: var(--font-family-headers);
+font-weight: 800;
+}
+.over-lay .header-paragraph{
+    font-size: 60px !important;
+    line-height: 72px !important;
+    font-family: var(--font-family-headers);
+    font-weight: lighter;
+}
+.header-social-links ul li{
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    margin-inline: 2px;
+}
+.header-social-links ul li a{
+    border-radius: 50%;
+}
+.header-social-links ul li a i{
+    padding: 11px;
+    color: var(--main-color-white);
+    font-size: 12px;
+}
+/******* End Header Over lay ***********/
+/***************** End Header ****************/
+
+/************ Start Section About *********************/
+#About .hero-image{
+    position: relative;
+}
+#About .hero-image img{
+    z-index: 1;
+}
+#About .hero-image::after{
+    content: '';
+    width: 75%;
+    height: 90%;
+    position: absolute;
+    top: 17%;
+    left: -5%;
+    background: url(/image/dots.png);
+    display: inline-block;
+    z-index: -1;
+}
+
+#About .about-info h3{
+    font-family: var(--font-family-headers);
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: 800;
+    color: var(--main-color);
+}
+#About .about-info h3 + p{
+    font-family: var(--font-family-paragraph);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--main-color-paragraph);
+    letter-spacing: 0.3rem;
+}
+#About .about-info p:nth-child(3){
+    font-family: var(--font-family-paragraph);
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--main-color-paragraph);
+}
+#About .about-info p:nth-child(3) span{
+    font-family: var(--font-family-paragraph);
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--main-color-paragraph);
+}
+#About .progress-bars-collection .progress{
+    height: 1.7rem;
+    -webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+            box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
+#About .progress-bars-collection .progress .progress-bar{
+    background-color: var(--main-color);
+    font-family: var(--font-family-headers);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+#About .progress-bars-collection .progress .progress-bar1{
+    width: 95%;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-animation: webDesignProgress1 0.5s linear 1s 1 !important;
+            animation: webDesignProgress1 0.5s linear 1s 1 !important;
+}
+@-webkit-keyframes webDesignProgress1 {
+    from{
+        width:50%;
+    }to{
+        width: 95%;
+    }
+}
+@keyframes webDesignProgress1 {
+    from{
+        width:50%;
+    }to{
+        width: 95%;
+    }
+}
+#About .progress-bars-collection .progress .progress-bar2{
+    width: 80%;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-animation: webDesignProgress2 0.5s linear 1s 1 !important;
+            animation: webDesignProgress2 0.5s linear 1s 1 !important;
+}
+@-webkit-keyframes webDesignProgress2 {
+    from{
+        width:50%;
+    }to{
+        width: 80%;
+    }
+}
+@keyframes webDesignProgress2 {
+    from{
+        width:50%;
+    }to{
+        width: 80%;
+    }
+}
+#About .progress-bars-collection .progress .progress-bar3{
+    width: 90%;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-animation: webDesignProgress3 0.5s linear 1s 1 !important;
+            animation: webDesignProgress3 0.5s linear 1s 1 !important;
+}
+@-webkit-keyframes webDesignProgress3 {
+    from{
+        width:50%;
+    }to{
+        width: 90%;
+    }
+}
+@keyframes webDesignProgress3 {
+    from{
+        width:50%;
+    }to{
+        width: 90%;
+    }
+}
+.submit-btn{
+color: var(--background-color-muted);
+background-color: var(--main-color);
+padding: 0.6rem 1.8rem;
+font-family: var(--font-family-paragraph);
+font-weight: 300;
+font-size: 13px;
+border: 1px solid var(--main-color);
+border-radius: 8px;
+-webkit-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+}
+ .submit-btn:hover{
+    color: var(--main-color);
+    background-color: var(--background-color-muted );
+}
+#About .about-buttons .contact-button{
+    color: var(--main-color);
+    background-color: var(--background-color-muted);
+    padding: 0.6rem 1.5rem;
+    font-family: var(--font-family-paragraph);
+    font-weight: 300;
+    font-size: 13px;
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#About .about-buttons .contact-button a{
+    color: var(--main-color);
+    transition: all 0.5s;
+}
+#About .about-buttons .contact-button:hover{
+    color: var(--background-color-muted );
+    background-color: var(--main-color );
+}
+#About .about-buttons .contact-button:hover a{
+    color: var(--background-color-muted );
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    #About .about-hero-info ,#About .about-hero-img{
+        width: 100%;
+    }
+    #About .hero-image{
+        text-align: center;
+        position: relative;
+        left: 4%;
+    }
+    #About .hero-image img{
+        width: 100%;
+    }
+    #About .hero-image::after{
+        content: '';
+        width: 75%;
+        height: 90%;
+        position: absolute;
+        top: 15%;
+        left:-3%;
+        background: url(/image/dots.png);
+        display: inline-block;
+        z-index: -1;
+    }
+    
+}
+@media screen  and (max-width:768px) {
+    #About .about-hero-info ,#About .about-hero-img{
+        width: 100%;
+    }
+    #About .hero-image{
+        text-align: center;
+        position: relative;
+        left: 2%;
+    }
+    #About .hero-image img{
+        width: 100%;
+    }
+    #About .hero-image::after{
+        content: '';
+        width: 75%;
+        height: 90%;
+        position: absolute;
+        top: 15%;
+        left:-2%;
+        background: url(/image/dots.png);
+        display: inline-block;
+        z-index: -1;
+    }
+    
+}
+/************ End Section About *********************/
+/************ Start Section Services **************/
+#Services{
+    background-color: var(--background-color-muted);
+}
+.section-header h2{
+    font-size:  40px;
+    font-weight: 900;
+    font-family: var(--font-family-headers);
+    line-height: 44px;
+    z-index: 0;
+    position: relative;
+}
+.section-header h2::after{
+    content: '';
+    width:18%;
+    height: 80%;
+    position: absolute;
+    top: 25%;
+    left:50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: url(/image/dots.png);
+    z-index: -1;
+}
+
+#Services .card{
+    -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: none;
+}
+#Services .card .card-title span {
+    --back-ground-span:#f4f4f4;
+    background-color: var(--back-ground-span);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#Services .card:hover  span {
+    background-color: var(--main-color);
+}
+#Services .card .card-title span i{
+    font-size: 25px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#Services .card:hover  span i{
+    color: var(--background-color-muted);
+}
+
+#Services .card .card-body h5{
+    font-size:  18px;
+    font-weight: 900;
+    font-family: var(--font-family-headers);
+    line-height: 44px;
+    z-index: 0;
+}
+#Services .card .card-body p{
+    font-size:  14px;
+    font-weight: 400;
+    font-family: var(--font-family-paragraph);
+    line-height: 25px;
+    color: var(--main-color-paragraph);
+    z-index: 0;
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    #Services .col-md-4 {
+        width: 100%;
+    }
+    
+}
+/************ End Section Services **************/
+
+/******* Start Work section *******/
+#Work .nav-pills .nav-link, .nav-pills .show>.nav-link {
+    color: var(--main-color);
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-family-paragraph);
+    line-height: 23px;
+    position: relative;
+}
+#Work .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: transparent;
+}
+#Work .nav-pills .nav-link.active::after , .nav-pills .show>.nav-link::after{
+    content: '';
+    height: 2px;
+    background-color: #111;
+    position: absolute;
+    bottom: 10%;
+    left:0%;
+    width: 0%;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+#Work .nav-pills .nav-link.active::after ,.nav-pills .show>.nav-link::after{
+    content: '';
+    height: 2px;
+    -webkit-transform-origin: left ;
+        -ms-transform-origin: left ;
+            transform-origin: left ;
+    background-color: #111;
+    position: absolute;
+    bottom: 10%;
+    left:15%;
+    -webkit-animation: underline;
+            animation: underline;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-direction: initial;
+            animation-direction: initial;
+    width: 70%;
+}
+
+.work-img {
+    cursor: pointer;
+}
+.work-img .imgLayer {
+    background-color: rgba(255, 255, 255,0.9) !important;
+    opacity: 0;
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    top:3%;
+    left: 3%;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.work-img .imgLayer:hover {
+    opacity: 1;
+}
+.work-img .imgLayer .work-details {
+    position: absolute;
+    top: 25%;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.work-img .imgLayer .work-details p {
+    color: var(--main-color);
+    font-family: var(--font-family-headers);
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    font-size: 12px;
+}
+.work-img .imgLayer  {
+    height: 95%;
+}
+.work-img .imgLayer .work-details .work-icons{
+    position: absolute;
+    top: 120%;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.work-img .imgLayer .work-icons p i{
+    margin: 0 !important;
+}
+.work-img .imgLayer .work-icons p i{
+    background-color: var(--main-color);  
+    border-radius: 50%;
+    color: var(--main-color-white);
+    padding: 9px 7px !important;
+    font-size: 12px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.work-img:hover .work-details {
+    top: 35%;
+}
+.work-img:hover .work-details .work-icons{
+    top: 45%;
+}
+.work-details .work-icons p i{
+    color: var(--main-color-white);
+    padding: 7px 5px !important;
+    font-size: 12px;
+}
+.work-details .work-icons p i:hover{
+    border: 2px solid var(--main-color);
+    background-color: var(--background-color-while-hovering);
+    color: var(--main-color);
+}
+@media screen and (max-width:778px) {
+   #Work .tab-pane .container-fluid .row  .col-md-4{
+        width: 100% !important;
+    }
+}
+@media screen and (min-width:779px) and (max-width:992px){
+    #Work .tab-pane .container-fluid .row  .col-md-4{
+        width: 50% !important;
+    }
+}
+/******* End Work section *******/
+/******* Start Clients section *******/
+#Clients{
+    background-color: var(--background-color-muted);
+}
+#Clients .section-header h2::after{
+    content: '';
+    width:25%;
+    height: 80%;
+    position: absolute;
+    top: 25%;
+    left:50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: url(/image/dots.png);
+    z-index: -1;
+}
+.carousel-inner .carousel-item .client-item .section-subtitle ~ h6{
+    font-family: var(--font-family-headers);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 30px 0 5px;
+}
+.carousel-inner .carousel-item .client-item span{
+    font-family: var(--font-family-headers);
+    font-size: 12px;
+    font-weight: 600;
+    color:var(--color-coursel);
+    margin-bottom: 30px;
+}
+.carousel-caption{
+    position: relative  ;
+    top: 0;
+    left: 0 ;
+    width: 100%;
+}
+.carousel-dark .carousel-indicators [data-bs-target] {
+    background-color: var(--color-coursel);
+}
+.carousel-indicators [data-bs-target="#carouselExampleDark"] {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-radius: 50%;
+    opacity: .5;
+    -webkit-transition: opacity .6s ease;
+    -o-transition: opacity .6s ease;
+    transition: opacity .6s ease;
+}
+.carousel-indicators [data-bs-target="#carouselExampleDark"]:hover{
+    background-color: var(--main-color);
+}
+.carousel-indicators [aria-current="true"]{
+    background-color: #fff;
+    opacity: 1;
+} 
+.carousel-indicators {
+    position: absolute !important; 
+    bottom: -50px;
+}
+/******* End Clients section *******/
+
+/******** start after-clients-section **/
+#after-clients-section .note{
+    font-family: var(--font-family-paragraph) !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+}
+#after-clients-section .container .row i + p{
+    font-family: var(--font-family-headers);
+    color: var(--main-color);
+    font-weight: 900;
+    font-size: 30px;
+}
+#after-clients-section .container .row i {
+    color: var(--main-color) !important;
+}
+/******** End after-clients-section **/
+
+/********* Start Our Team Section************/
+#Team{
+    background-color: var(--background-color-muted);
+}
+#Team .card{
+    position: relative !important;
+    overflow: hidden;
+}
+#Team .card .card-img-top{
+    height: 80% !important;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 0;
+}
+#Team .card .card-body {
+    height: 20% !important;
+    overflow: hidden;
+    background-color: var(--team-section-content-background);
+    z-index: 2;
+    font-family: var(--font-family-headers);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--main-color-white);
+}
+#Team .card .card-image{
+    overflow: hidden;
+    width: 100% !important;
+    height: 80%;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 0;
+}
+#Team .card .team-layer{
+    position: absolute;
+    top:1%;
+    left:1%;
+    bottom: 1%;
+    right: 1%;
+    height:76% !important;
+    width:98%;
+    background-color:#fff;
+    opacity: 0;
+    -webkit-transform:  scale(0.01) ;
+        -ms-transform:  scale(0.01) ;
+            transform:  scale(0.01) ;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    -webkit-transition: all 0.5s  ease-out;
+    -o-transition: all 0.5s  ease-out;
+    transition: all 0.5s  ease-out;
+}
+#Team .card .team-layer ul{
+    padding-left: 0;
+}
+#Team .card .team-layer ul li a span{
+    padding: 55%;
+    border-radius: 50%;
+    background-color: var(--navbar-color-active);
+    border: 1px solid var(--navbar-color-active);
+}
+#Team .card .team-layer ul li span i{
+   color: var(--main-color-white);
+}
+#Team .card .team-layer ul li:hover a span i{
+    color: var(--main-color);
+}
+#Team .card .team-layer ul li:hover  a span{
+    background-color: var(--back-ground-span);
+    border: 1px solid var(--navbar-color-active);
+}
+#Team .card:hover .team-layer{
+    opacity: 1;
+    -webkit-transform: scale(0.999) rotateY(360deg);
+            transform: scale(0.999) rotateY(360deg);
+}
+#Team .card .card-img-top:hover ,#Team .card .team-layer:hover .card-img-top{
+    -webkit-transform: scale(1.08);
+        -ms-transform: scale(1.08);
+            transform: scale(1.08);
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    #Team .container .team-cards{
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    #Team .container .team-cards .col-md-4{
+        width:50%;
+    }
+    
+}
+/********* End Our Team Section************/
+
+/*******Start contect section *********/
+#Contact .items{
+    --background-span:#EEEEEE;
+}
+#Contact .container{
+    width: 75% !important;
+}
+
+#Contact .container .section-header h2::after{
+    content: '';
+    width:25%;
+    height: 80%;
+    position: absolute;
+    top: 25%;
+    left:50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: url(/image/dots.png);
+    z-index: -1;
+}
+
+#Contact .items span{
+    background-color: var(--background-span);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#Contact .items:hover span{
+    color: var(--main-color-white);
+    background-color: var(--main-color-header);
+}
+#Contact .items h6{
+    font-weight: 700;
+    font-family: var(--font-family-headers);
+    font-size: 1rem;
+}
+#Contact .items p{
+    font-weight: 500;
+    font-family: var(--font-family-paragraph);
+    font-size: 0.9rem;
+}
+.form-control, .form-control:focus ,.form-control:hover{
+    --background-input:#F4F4F4;
+    background-color: var(--background-input);
+    border: none;
+    -webkit-box-shadow: rgba(208, 208, 208, 0.1) 0px 2px 8px 0px;
+            box-shadow: rgba(208, 208, 208, 0.1) 0px 2px 8px 0px;
+}
+
+/*******End contect section *********/
+/*****Start Footer*****/
+#Footer{
+    background-color: var(--main-color);
+    color: var(--main-color-paragraph);
+    font-size: 13px;
+    font-weight: 400;
+    font-family: var(--font-family-paragraph);
+}
+/*****End Footer*****/
+
